@@ -5,3 +5,11 @@ body {
   padding: 0;
   box-sizing: border-box;
 }
+
+#root {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+}

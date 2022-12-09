@@ -6,6 +6,8 @@
   border-radius: 5px;
   font-size: 39px;
   text-align: end;
+  background-color: #ffffff;
+  font-family: monospace;
 }
 
 .input {
@@ -39,9 +41,9 @@
   height: 70px;
   width: 70px;
   font-size: 23px;
-  border: 1px solid #5a5a5a;
+  border: 1px solid #000000;
   border-radius: 4px;
-  box-shadow: 1px 1px 1px #5a5a5a;
+  box-shadow: 1px 1px 1px #000000;
   cursor: pointer;
 }
 

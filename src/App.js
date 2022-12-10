@@ -6,10 +6,12 @@ import classes from './styles.module.css'
 function App() {
 
   const [output, setOutput] = useState();
-  const [number, setNumber] = useState([0]);
+  const [number, setNumber] = useState([]);
+  const [prevNumber, setPrevNumber] = useState();
+  const [mathOperation, setMathOperation] = useState();
 
   useEffect(() => {
-    if (Number.isSafeInteger(Number(number.join(''))) === false) {
+    if ((number.join('').length > 16) || number.includes(NaN)) {
       setOutput('ERROR')
     } else {
       setOutput(Number(number.join('')));
@@ -23,7 +25,14 @@ function App() {
           {output}
         </p>
       </div>
-      <InputArea setNumber={setNumber} number={number} />
+      <InputArea
+        setNumber={setNumber}
+        number={number}
+        prevNumber={prevNumber}
+        mathOperation={mathOperation}
+        setPrevNumber={setPrevNumber}
+        setMathOperation={setMathOperation}
+      />
     </div>
   );
 }

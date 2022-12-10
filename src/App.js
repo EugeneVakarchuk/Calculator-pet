@@ -5,9 +5,16 @@ import classes from './styles.module.css'
 
 function App() {
 
-  const [output, setOutput] = useState('0');
-  const [nowClick, setNowClick] = useState();
+  const [output, setOutput] = useState();
+  const [number, setNumber] = useState([0]);
 
+  useEffect(() => {
+    if (Number.isSafeInteger(Number(number.join(''))) === false) {
+      setOutput('ERROR')
+    } else {
+      setOutput(Number(number.join('')));
+    }
+  })
 
   return (
     <div className="App">
@@ -16,7 +23,7 @@ function App() {
           {output}
         </p>
       </div>
-      <InputArea getNowClick={setNowClick} updateOut={setOutput} />
+      <InputArea setNumber={setNumber} number={number} />
     </div>
   );
 }

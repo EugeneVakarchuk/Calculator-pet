@@ -1,12 +1,11 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useRef } from 'react';
 import classes from '../styles.module.css'
 
-const Button = ({ getButtClick, ...props }) => {
+const Button = ({ setNumber, number, ...props }) => {
 
   const buttRef = useRef();
-
   const buttClick = () => {
-    getButtClick(props.children);
+    setNumber([...number, props.children])
   }
 
   return (

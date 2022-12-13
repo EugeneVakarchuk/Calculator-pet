@@ -2,30 +2,40 @@ import React, { useEffect } from 'react';
 import { Button } from './Button';
 
 const MathButton = ({
-  setPrevNumber,
-  number,
-  setNumber,
-  setMathOperation,
-  mathOperation,
+  output,
+  setMathFunc,
+  setMemoryNum,
+  setInputNum,
+  setNumsDef,
+  setIsFloatNum,
   ...props }) => {
 
+  const rememberNumAndClearInput = (output) => {
+    setMemoryNum(output);
+    setInputNum([])
+    setNumsDef(false);
+    setIsFloatNum(false);
+  }
+
   const buttClick = () => {
-    setPrevNumber(Number(number.join('')));
-    setNumber([]);
-    switch (mathOperation) {
-      case 'plus':
-        setMathOperation('plus');
+    switch (true) {
+      case (props.children === '+'):
+        setMathFunc('plus');
+        rememberNumAndClearInput(output);
         break;
-      case 'multiply':
-        setMathOperation('multiply');
+      case (props.children === '-'):
+        setMathFunc('minus');
+        rememberNumAndClearInput(output);
         break;
-      case 'minus':
-        setMathOperation('minus');
+      case (props.children === '*'):
+        setMathFunc('multiply');
+        rememberNumAndClearInput(output);
         break;
-      case 'divide':
-        setMathOperation('divide');
+      case (props.children === '/'):
+        setMathFunc('divide');
+        rememberNumAndClearInput(output);
         break;
-      default: setMathOperation('');
+      default: setMathFunc('none');
     }
   }
 

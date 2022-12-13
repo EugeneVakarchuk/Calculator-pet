@@ -5,16 +5,22 @@ import classes from './styles.module.css'
 
 function App() {
 
-  const [output, setOutput] = useState();
-  const [number, setNumber] = useState([]);
-  const [prevNumber, setPrevNumber] = useState();
-  const [mathOperation, setMathOperation] = useState();
+  const [output, setOutput] = useState(null);
+  const [inputNum, setInputNum] = useState([]);
+  const [memoryNum, setMemoryNum] = useState();
+  const [mathFunc, setMathFunc] = useState('');
+  const [numsDef, setNumsDef] = useState(false);
+  const [isFloatNum, setIsFloatNum] = useState(false);
 
   useEffect(() => {
-    if ((number.join('').length > 16) || number.includes(NaN)) {
-      setOutput('ERROR')
+    if (isNaN(output)) {
+      setOutput('ERROR');
     } else {
-      setOutput(Number(number.join('')));
+      if (inputNum.length > 15) {
+        setOutput('ERROR');
+      } else {
+        setOutput(Number(inputNum.join('')));
+      }
     }
   })
 
@@ -26,12 +32,18 @@ function App() {
         </p>
       </div>
       <InputArea
-        setNumber={setNumber}
-        number={number}
-        prevNumber={prevNumber}
-        mathOperation={mathOperation}
-        setPrevNumber={setPrevNumber}
-        setMathOperation={setMathOperation}
+        isFloatNum={isFloatNum}
+        setIsFloatNum={setIsFloatNum}
+        setOutput={setOutput}
+        output={output}
+        mathFunc={mathFunc}
+        memoryNum={memoryNum}
+        setMemoryNum={setMemoryNum}
+        setMathFunc={setMathFunc}
+        inputNum={inputNum}
+        setInputNum={setInputNum}
+        setNumsDef={setNumsDef}
+        numsDef={numsDef}
       />
     </div>
   );

@@ -4,69 +4,111 @@ import classes from '../styles.module.css';
 import NumberButton from './NumberButton';
 import MathButton from './MathButton';
 import EqualsButton from './EqualsButton';
+import ClearEverithing from './ClearEverithing';
+import Dot from './Dot';
 
 const InputArea = ({
-  setNumber,
-  number,
-  setPrevNumber,
-  setMathOperation,
-  mathOperation,
-  prevNumber,
+  output,
+  mathFunc,
+  memoryNum,
+  setMemoryNum,
+  setMathFunc,
+  inputNum,
+  setInputNum,
+  setNumsDef,
+  numsDef,
+  setOutput,
+  setIsFloatNum,
+  isFloatNum,
   ...props }) => {
 
   return (
     <div onClick={props.onClick} className={classes.input}>
       <div className={classes.input_numbers}>
-        <NumberButton setNumber={setNumber} number={number} >7</NumberButton>
-        <NumberButton setNumber={setNumber} number={number} >8</NumberButton>
-        <NumberButton setNumber={setNumber} number={number} >9</NumberButton>
-        <NumberButton setNumber={setNumber} number={number} >4</NumberButton>
-        <NumberButton setNumber={setNumber} number={number} >5</NumberButton>
-        <NumberButton setNumber={setNumber} number={number} >6</NumberButton>
-        <NumberButton setNumber={setNumber} number={number} >1</NumberButton>
-        <NumberButton setNumber={setNumber} number={number} >2</NumberButton>
-        <NumberButton setNumber={setNumber} number={number} >3</NumberButton>
-        <NumberButton setNumber={setNumber} number={number} >0</NumberButton>
-        <NumberButton setNumber={setNumber} number={number} >.</NumberButton>
+        <NumberButton setInputNum={setInputNum} inputNum={inputNum} >7</NumberButton>
+        <NumberButton setInputNum={setInputNum} inputNum={inputNum} >8</NumberButton>
+        <NumberButton setInputNum={setInputNum} inputNum={inputNum} >9</NumberButton>
+        <NumberButton setInputNum={setInputNum} inputNum={inputNum} >4</NumberButton>
+        <NumberButton setInputNum={setInputNum} inputNum={inputNum} >5</NumberButton>
+        <NumberButton setInputNum={setInputNum} inputNum={inputNum} >6</NumberButton>
+        <NumberButton setInputNum={setInputNum} inputNum={inputNum} >1</NumberButton>
+        <NumberButton setInputNum={setInputNum} inputNum={inputNum} >2</NumberButton>
+        <NumberButton setInputNum={setInputNum} inputNum={inputNum} >3</NumberButton>
+        <NumberButton setInputNum={setInputNum} inputNum={inputNum} >0</NumberButton>
+        <Dot setInputNum={setInputNum} inputNum={inputNum} setIsFloatNum={setIsFloatNum} isFloatNum={isFloatNum}>.</Dot>
       </div>
       <div className={classes.input_operations}>
+
+
         <MathButton
-          setPrevNumber={setPrevNumber}
-          number={number}
-          setNumber={setNumber}
-          setMathOperation={setMathOperation}
-          mathOperation={'divide'}
+          output={output}
+          setMathFunc={setMathFunc}
+          setMemoryNum={setMemoryNum}
+          setInputNum={setInputNum}
+          setNumsDef={setNumsDef}
+          setIsFloatNum={setIsFloatNum}
         >/</MathButton>
+
+
         <Button>&#8592;</Button>
+
+
         <MathButton
-          setPrevNumber={setPrevNumber}
-          number={number}
-          setNumber={setNumber}
-          setMathOperation={setMathOperation}
-          mathOperation={'multiply'}
+          output={output}
+          setMathFunc={setMathFunc}
+          setMemoryNum={setMemoryNum}
+          setInputNum={setInputNum}
+          setNumsDef={setNumsDef}
+          setIsFloatNum={setIsFloatNum}
         >*</MathButton>
+
+
         <Button>C</Button>
+
+
         <MathButton
-          setPrevNumber={setPrevNumber}
-          number={number}
-          setNumber={setNumber}
-          setMathOperation={setMathOperation}
-          mathOperation={'minus'}
+          output={output}
+          setMathFunc={setMathFunc}
+          setMemoryNum={setMemoryNum}
+          setInputNum={setInputNum}
+          setNumsDef={setNumsDef}
+          setIsFloatNum={setIsFloatNum}
         >-</MathButton>
-        <Button>CE</Button>
+
+
+        <ClearEverithing
+          setMemoryNum={setMemoryNum}
+          setMathFunc={setMathFunc}
+          setInputNum={setInputNum}
+          setNumsDef={setNumsDef}
+          setOutput={setOutput}
+          setIsFloatNum={setIsFloatNum}
+        >CE</ClearEverithing>
+
+
         <MathButton
-          setPrevNumber={setPrevNumber}
-          number={number}
-          setNumber={setNumber}
-          setMathOperation={setMathOperation}
-          mathOperation={'plus'}
+          output={output}
+          setMathFunc={setMathFunc}
+          setMemoryNum={setMemoryNum}
+          setInputNum={setInputNum}
+          setNumsDef={setNumsDef}
+          setIsFloatNum={setIsFloatNum}
         >+</MathButton>
+
+
         <Button>&#177;;</Button>
+
+
         <EqualsButton
-          setNumber={setNumber}
-          number={number}
-          mathOperation={mathOperation}
-          prevNumber={prevNumber}
+          setInputNum={setInputNum}
+          setMemoryNum={setMemoryNum}
+          mathFunc={mathFunc}
+          inputNum={inputNum}
+          memoryNum={memoryNum}
+          output={output}
+          setNumsDef={setNumsDef}
+          numsDef={numsDef}
+          setIsFloatNum={setIsFloatNum}
         >=</EqualsButton>
       </div>
     </div>

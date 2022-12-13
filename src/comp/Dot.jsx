@@ -1,16 +1,22 @@
 import React from 'react';
 import { Button } from './Button';
 
-const NumberButton = ({
+const Dot = ({
   inputNum,
   setInputNum,
+  setIsFloatNum,
+  isFloatNum,
   ...props }) => {
 
   const buttClick = () => {
-    setInputNum(
-      [...inputNum, props.children]
-    )
+    if (!isFloatNum) {
+      setInputNum(
+        [...inputNum, props.children]
+      )
+      setIsFloatNum(true);
+    }
   }
+
 
 
   return (
@@ -20,4 +26,4 @@ const NumberButton = ({
   );
 };
 
-export default NumberButton;
+export default Dot;

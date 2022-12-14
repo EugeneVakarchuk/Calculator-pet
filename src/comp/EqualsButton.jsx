@@ -54,11 +54,11 @@ const EqualsButton = ({
           setIsFloatNum(false)
           break;
         case (mathFunc === 'minus'):
-          setInputNum(minus(output, memoryNum));
+          setInputNum(minus(memoryNum, output));
           setIsFloatNum(false)
           break;
         case (mathFunc === 'divide'):
-          setInputNum(divide(output, memoryNum));
+          setInputNum(divide(memoryNum, output));
           setIsFloatNum(false)
           break;
         case (mathFunc === 'multiply'):

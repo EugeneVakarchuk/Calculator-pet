@@ -12,7 +12,7 @@ const ClearEverithing = ({
 
   const buttClick = () => {
     setMemoryNum()
-    setMathFunc()
+    setMathFunc('')
     setInputNum([])
     setNumsDef(false)
     setOutput(null)

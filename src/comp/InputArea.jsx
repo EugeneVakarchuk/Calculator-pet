@@ -8,6 +8,7 @@ import ClearEverithing from './ClearEverithing';
 import Dot from './Dot';
 import Clear from './Clear';
 import Backspace from './Backspace';
+import Negative from './Negative';
 
 const InputArea = ({
   output,
@@ -103,7 +104,11 @@ const InputArea = ({
         >+</MathButton>
 
 
-        <Button>&#177;;</Button>
+        <Negative
+          output={output}
+          inputNum={inputNum}
+          setInputNum={setInputNum}
+        >&#177;</Negative>
 
 
         <EqualsButton

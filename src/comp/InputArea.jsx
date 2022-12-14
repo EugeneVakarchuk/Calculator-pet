@@ -6,6 +6,8 @@ import MathButton from './MathButton';
 import EqualsButton from './EqualsButton';
 import ClearEverithing from './ClearEverithing';
 import Dot from './Dot';
+import Clear from './Clear';
+import Backspace from './Backspace';
 
 const InputArea = ({
   output,
@@ -50,7 +52,10 @@ const InputArea = ({
         >/</MathButton>
 
 
-        <Button>&#8592;</Button>
+        <Backspace
+          inputNum={inputNum}
+          setInputNum={setInputNum}
+        >&#8592;</Backspace>
 
 
         <MathButton
@@ -63,7 +68,9 @@ const InputArea = ({
         >*</MathButton>
 
 
-        <Button>C</Button>
+        <Clear
+          setInputNum={setInputNum}
+        >C</Clear>
 
 
         <MathButton

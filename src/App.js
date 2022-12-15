@@ -11,6 +11,13 @@ function App() {
   const [mathFunc, setMathFunc] = useState('');
   const [numsDef, setNumsDef] = useState(false);
   const [isFloatNum, setIsFloatNum] = useState(false);
+  const [intergerPart, setIntergerPart] = useState();
+
+  useEffect(() => {
+    if (!!isFloatNum) {
+      setIntergerPart(inputNum.indexOf('.'))
+    }
+  })
 
   useEffect(() => {
     if (isNaN(output)) {
@@ -32,6 +39,8 @@ function App() {
         </p>
       </div>
       <InputArea
+        intergerPart={intergerPart}
+        setIntergerPart={setIntergerPart}
         isFloatNum={isFloatNum}
         setIsFloatNum={setIsFloatNum}
         setOutput={setOutput}

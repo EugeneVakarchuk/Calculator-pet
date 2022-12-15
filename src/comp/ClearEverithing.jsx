@@ -9,6 +9,7 @@ const ClearEverithing = ({
   setNumsDef,
   setOutput,
   setIsFloatNum,
+  setIntergerPart,
   ...props }) => {
 
   const buttClick = () => {
@@ -18,6 +19,7 @@ const ClearEverithing = ({
     setNumsDef(false)
     setOutput(null)
     setIsFloatNum(false)
+    setIntergerPart()
   }
 
   return (

@@ -23,6 +23,8 @@ const InputArea = ({
   setOutput,
   setIsFloatNum,
   isFloatNum,
+  setIntergerPart,
+  intergerPart,
   ...props }) => {
 
   return (
@@ -91,6 +93,7 @@ const InputArea = ({
           setNumsDef={setNumsDef}
           setOutput={setOutput}
           setIsFloatNum={setIsFloatNum}
+          setIntergerPart={setIntergerPart}
         >CE</ClearEverithing>
 
 
@@ -112,6 +115,7 @@ const InputArea = ({
 
 
         <EqualsButton
+          intergerPart={intergerPart}
           setInputNum={setInputNum}
           setMemoryNum={setMemoryNum}
           mathFunc={mathFunc}
@@ -120,6 +124,7 @@ const InputArea = ({
           output={output}
           setNumsDef={setNumsDef}
           numsDef={numsDef}
+          isFloatNum={isFloatNum}
           setIsFloatNum={setIsFloatNum}
         >=</EqualsButton>
       </div>

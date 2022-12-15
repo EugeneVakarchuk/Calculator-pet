@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { Button } from './Button';
+import classes from '../styles.module.css'
 
 const MathButton = ({
   output,
@@ -41,7 +42,7 @@ const MathButton = ({
 
   return (
 
-    <div onClick={buttClick}>
+    <div className={classes.input_operations_item} onClick={buttClick}>
       <Button children={props.children} />
     </div>
   );

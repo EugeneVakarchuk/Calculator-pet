@@ -1,5 +1,6 @@
 import React from 'react';
 import { Button } from './Button';
+import classes from '../styles.module.css'
 
 const Negative = ({
   output,
@@ -20,7 +21,7 @@ const Negative = ({
   }
 
   return (
-    <div onClick={buttClick}>
+    <div className={classes.input_operations_item} onClick={buttClick}>
       <Button children={props.children} />
     </div>
   );

@@ -4,6 +4,7 @@ import { plus } from '../mathLogic/mathOperations';
 import { minus } from '../mathLogic/mathOperations';
 import { multiply } from '../mathLogic/mathOperations';
 import { divide } from '../mathLogic/mathOperations';
+import classes from '../styles.module.css'
 
 const EqualsButton = ({
   output,
@@ -72,7 +73,7 @@ const EqualsButton = ({
 
   return (
 
-    <div onClick={buttClick}>
+    <div className={classes.input_operations_item} onClick={buttClick}>
       <Button children={props.children} />
     </div>
 

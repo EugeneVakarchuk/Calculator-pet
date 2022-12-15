@@ -1,8 +1,10 @@
 .App {
-  width: 50vw;
-  height: 50vh;
+  width: 420px;
+  height: 500px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-evenly;
+  background-color: rgba(12, 12, 12, 0.4);
+  border-radius: 10px;
 }

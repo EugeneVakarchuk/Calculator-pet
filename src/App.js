@@ -17,7 +17,7 @@ function App() {
       setOutput('ERROR');
     } else {
       if (inputNum.length > 15) {
-        setOutput('ERROR');
+        setOutput('TOO MUCH');
       } else {
         setOutput(Number(inputNum.join('')));
       }

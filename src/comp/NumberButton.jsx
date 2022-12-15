@@ -1,5 +1,6 @@
 import React from 'react';
 import { Button } from './Button';
+import classes from '../styles.module.css'
 
 const NumberButton = ({
   inputNum,
@@ -14,7 +15,7 @@ const NumberButton = ({
 
 
   return (
-    <div onClick={buttClick}>
+    <div className={classes.number_butt} onClick={buttClick}>
       <Button children={props.children} />
     </div>
   );

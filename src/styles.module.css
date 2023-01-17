@@ -9,6 +9,14 @@
   font-family: monospace;
 }
 
+.keydownWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+}
+
 .input {
   display: flex;
   flex-direction: row;

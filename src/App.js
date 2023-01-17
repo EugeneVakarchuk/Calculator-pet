@@ -31,29 +31,42 @@ function App() {
     }
   })
 
+  const numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+  const keyDown = (key) => {
+    if (numbers.includes(Number(key.key))) {
+      setInputNum(
+        [...inputNum, key.key]
+      )
+    }
+  }
+
   return (
-    <div className="App">
-      <div className="output">
-        <p className={classes.output}>
-          {output}
-        </p>
+    <div className={classes.keydownWrapper} onKeyDown={keyDown} tabIndex='-1'>
+      <div className="App">
+
+        <div className="output">
+          <p className={classes.output}>
+            {output}
+          </p>
+        </div>
+        <InputArea
+          intergerPart={intergerPart}
+          setIntergerPart={setIntergerPart}
+          isFloatNum={isFloatNum}
+          setIsFloatNum={setIsFloatNum}
+          setOutput={setOutput}
+          output={output}
+          mathFunc={mathFunc}
+          memoryNum={memoryNum}
+          setMemoryNum={setMemoryNum}
+          setMathFunc={setMathFunc}
+          inputNum={inputNum}
+          setInputNum={setInputNum}
+          setNumsDef={setNumsDef}
+          numsDef={numsDef}
+        />
       </div>
-      <InputArea
-        intergerPart={intergerPart}
-        setIntergerPart={setIntergerPart}
-        isFloatNum={isFloatNum}
-        setIsFloatNum={setIsFloatNum}
-        setOutput={setOutput}
-        output={output}
-        mathFunc={mathFunc}
-        memoryNum={memoryNum}
-        setMemoryNum={setMemoryNum}
-        setMathFunc={setMathFunc}
-        inputNum={inputNum}
-        setInputNum={setInputNum}
-        setNumsDef={setNumsDef}
-        numsDef={numsDef}
-      />
     </div>
   );
 }

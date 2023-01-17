@@ -11,7 +11,7 @@ import {
   minusFloat,
   multiplyFloat,
   divideFloat
-} from '.5/mathLogic/mathOperations';
+} from './mathLogic/mathOperations';
 
 function App() {
 

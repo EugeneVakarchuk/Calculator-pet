@@ -38,41 +38,44 @@ function App() {
   const mathOperSymbols = ['+', '-', '*', '/'];
 
   const keyDown = (key) => {
-    if (numbers.includes(Number(key.key))) {
-      setInputNum(
-        [...inputNum, key.key]
-      )
-    }
-    if (mathOperSymbols.includes(key.key)) {
-      setMath(
-        output,
-        setMemoryNum,
-        setInputNum,
-        setNumsDef,
-        setIsFloatNum,
-        setMathFunc,
-        key.key
-      )
-    }
-    if (key.key === '=') {
-      equal(
-        mathFunc,
-        output,
-        isFloatNum,
-        numsDef,
-        setInputNum,
-        memoryNum,
-        setIsFloatNum,
-        intergerPart,
-        setMemoryNum,
-        setNumsDef
-      )
-    }
-    if (key.key === 'Backspace') {
-      backspace(
-        inputNum,
-        setInputNum
-      )
+    switch (true) {
+      case (numbers.includes(Number(key.key))):
+        setInputNum(
+          [...inputNum, key.key]
+        )
+        break;
+      case (mathOperSymbols.includes(key.key)):
+        setMath(
+          output,
+          setMemoryNum,
+          setInputNum,
+          setNumsDef,
+          setIsFloatNum,
+          setMathFunc,
+          key.key
+        )
+        break;
+      case (key.key === '='):
+        equal(
+          mathFunc,
+          output,
+          isFloatNum,
+          numsDef,
+          setInputNum,
+          memoryNum,
+          setIsFloatNum,
+          intergerPart,
+          setMemoryNum,
+          setNumsDef
+        )
+        break;
+      case (key.key === 'Backspace'):
+        backspace(
+          inputNum,
+          setInputNum
+        )
+        break;
+      default:
     }
   }
 

@@ -4,6 +4,7 @@ import InputArea from './comp/InputArea';
 import classes from './styles.module.css'
 import equal from './mathLogic/equal';
 import setMath from './mathLogic/setMathOperation';
+import backspace from './mathLogic/backspace';
 
 function App() {
 
@@ -65,6 +66,12 @@ function App() {
         intergerPart,
         setMemoryNum,
         setNumsDef
+      )
+    }
+    if (key.key === 'Backspace') {
+      backspace(
+        inputNum,
+        setInputNum
       )
     }
   }

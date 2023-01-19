@@ -1,6 +1,7 @@
 import React from 'react';
 import { Button } from './Button';
 import classes from '../styles.module.css'
+import backspace from '../mathLogic/backspace';
 
 const Backspace = ({
   inputNum,
@@ -8,7 +9,10 @@ const Backspace = ({
   ...props }) => {
 
   const buttClick = () => {
-    setInputNum(inputNum.slice(0, -1))
+    backspace(
+      inputNum,
+      setInputNum
+    )
   }
 
   return (

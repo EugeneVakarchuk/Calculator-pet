@@ -1,6 +1,7 @@
 import React from 'react';
 import { Button } from './Button';
 import classes from '../styles.module.css'
+import clearAll from '../mathLogic/clearAll';
 
 const ClearEverithing = ({
   setMemoryNum,
@@ -13,13 +14,15 @@ const ClearEverithing = ({
   ...props }) => {
 
   const buttClick = () => {
-    setMemoryNum()
-    setMathFunc('')
-    setInputNum([])
-    setNumsDef(false)
-    setOutput(null)
-    setIsFloatNum(false)
-    setIntergerPart()
+    clearAll(
+      setMemoryNum,
+      setMathFunc,
+      setInputNum,
+      setNumsDef,
+      setOutput,
+      setIsFloatNum,
+      setIntergerPart
+    )
   }
 
   return (

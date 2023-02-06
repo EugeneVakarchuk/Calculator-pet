@@ -23,7 +23,7 @@ Math logic was decomposed to mathLogic folder.
   ``` js
   npm i
   ```
-1. Start React project with command:
+3. Start React project with command:
   ``` js
   npm start
   ```

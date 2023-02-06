@@ -1,13 +1,4 @@
-import {
-  plus,
-  minus,
-  multiply,
-  divide,
-  plusFloat,
-  minusFloat,
-  multiplyFloat,
-  divideFloat
-} from '../mathLogic/mathOperations';
+import { math } from '../mathLogic/mathOperations';
 
 const equal = (
   mathFunc,
@@ -37,31 +28,31 @@ const equal = (
     switch (true) {
       case (mathFunc === 'plus' && numDef === false):
         firstIntMath()
-        setInputNum(plus(output, memoryNum));
+        setInputNum(math(output, memoryNum, mathFunc));
         break;
       case (mathFunc === 'minus' && numDef === false):
         firstIntMath()
-        setInputNum(minus(output, memoryNum));
+        setInputNum(math(output, memoryNum, mathFunc));
         break;
       case (mathFunc === 'divide' && numDef === false):
         firstIntMath()
-        setInputNum(divide(output, memoryNum));
+        setInputNum(math(output, memoryNum, mathFunc));
         break;
       case (mathFunc === 'multiply' && numDef === false):
         firstIntMath()
-        setInputNum(multiply(output, memoryNum));
+        setInputNum(math(output, memoryNum, mathFunc));
         break;
       case (mathFunc === 'plus' && numDef === true):
-        setInputNum(plus(output, memoryNum));
+        setInputNum(math(output, memoryNum, mathFunc));
         break;
       case (mathFunc === 'minus' && numDef === true):
-        setInputNum(minus(memoryNum, output));
+        setInputNum(math(memoryNum, output, mathFunc));
         break;
       case (mathFunc === 'divide' && numDef === true):
-        setInputNum(divide(memoryNum, output));
+        setInputNum(math(memoryNum, output, mathFunc));
         break;
       case (mathFunc === 'multiply' && numDef === true):
-        setInputNum(multiply(output, memoryNum));
+        setInputNum(math(output, memoryNum, mathFunc));
         break;
       default:
     }
@@ -72,31 +63,31 @@ const equal = (
     switch (true) {
       case (mathFunc === 'plus' && numDef === false):
         firstMath()
-        setInputNum(plusFloat(output, memoryNum, intergerPart));
+        setInputNum(math(output, memoryNum, mathFunc, intergerPart));
         break;
       case (mathFunc === 'minus' && numDef === false):
         firstMath()
-        setInputNum(minusFloat(output, memoryNum, intergerPart));
+        setInputNum(math(output, memoryNum, mathFunc, intergerPart));
         break;
       case (mathFunc === 'divide' && numDef === false):
         firstMath()
-        setInputNum(divideFloat(output, memoryNum, intergerPart));
+        setInputNum(math(output, memoryNum, mathFunc, intergerPart));
         break;
       case (mathFunc === 'multiply' && numDef === false):
         firstMath()
-        setInputNum(multiplyFloat(output, memoryNum, intergerPart));
+        setInputNum(math(output, memoryNum, mathFunc, intergerPart));
         break;
       case (mathFunc === 'plus' && numDef === true):
-        setInputNum(plusFloat(output, memoryNum, intergerPart));
+        setInputNum(math(output, memoryNum, mathFunc, intergerPart));
         break;
       case (mathFunc === 'minus' && numDef === true):
-        setInputNum(minusFloat(memoryNum, output, intergerPart));
+        setInputNum(math(memoryNum, output, mathFunc, intergerPart));
         break;
       case (mathFunc === 'divide' && numDef === true):
-        setInputNum(divideFloat(memoryNum, output, intergerPart));
+        setInputNum(math(memoryNum, output, mathFunc, intergerPart));
         break;
       case (mathFunc === 'multiply' && numDef === true):
-        setInputNum(multiplyFloat(output, memoryNum, intergerPart));
+        setInputNum(math(output, memoryNum, mathFunc, intergerPart));
         break;
       default:
     }

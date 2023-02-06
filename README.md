@@ -19,6 +19,12 @@ Math logic was decomposed to mathLogic folder.
 
 ### Install
 1. Clone Repository.
-2. Type 'npm i' in a terminal.
-3. Type 'npm start' in a terminal.
+2. Download packages with command:
+  ``` js
+  npm i
+  ```
+1. Start React project with command:
+  ``` js
+  npm start
+  ```
 

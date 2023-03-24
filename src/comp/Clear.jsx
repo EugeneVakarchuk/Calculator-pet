@@ -2,12 +2,10 @@ import React from 'react';
 import { Button } from './Button';
 import classes from '../styles.module.css'
 
-const Clear = ({
-  setInputNum,
-  ...props }) => {
+const Clear = (props) => {
 
   const buttClick = () => {
-    setInputNum([]);
+    props.setInputNum([]);
   }
 
   return (

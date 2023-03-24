@@ -3,34 +3,22 @@ import { Button } from './Button';
 import equal from '../mathLogic/equal';
 import classes from '../styles.module.css'
 
-const EqualsButton = ({
-  output,
-  inputNum,
-  memoryNum,
-  setInputNum,
-  setMemoryNum,
-  mathFunc,
-  setNumsDef,
-  numsDef,
-  setIsFloatNum,
-  isFloatNum,
-  intergerPart,
-  ...props }) => {
+const EqualsButton = (props) => {
 
 
 
   const buttClick = () => {
     equal(
-      mathFunc,
-      output,
-      isFloatNum,
-      numsDef,
-      setInputNum,
-      memoryNum,
-      setIsFloatNum,
-      intergerPart,
-      setMemoryNum,
-      setNumsDef
+      props.mathFunc,
+      props.output,
+      props.isFloatNum,
+      props.numsDef,
+      props.setInputNum,
+      props.memoryNum,
+      props.setIsFloatNum,
+      props.intergerPart,
+      props.setMemoryNum,
+      props.setNumsDef
     )
   }
 

@@ -3,25 +3,17 @@ import { Button } from './Button';
 import classes from '../styles.module.css'
 import clearAll from '../mathLogic/clearAll';
 
-const ClearEverithing = ({
-  setMemoryNum,
-  setMathFunc,
-  setInputNum,
-  setNumsDef,
-  setOutput,
-  setIsFloatNum,
-  setIntergerPart,
-  ...props }) => {
+const ClearEverithing = (props) => {
 
   const buttClick = () => {
     clearAll(
-      setMemoryNum,
-      setMathFunc,
-      setInputNum,
-      setNumsDef,
-      setOutput,
-      setIsFloatNum,
-      setIntergerPart
+      props.setMemoryNum,
+      props.setMathFunc,
+      props.setInputNum,
+      props.setNumsDef,
+      props.setOutput,
+      props.setIsFloatNum,
+      props.setIntergerPart
     )
   }
 

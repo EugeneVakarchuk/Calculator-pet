@@ -3,15 +3,12 @@ import { Button } from './Button';
 import classes from '../styles.module.css'
 import backspace from '../mathLogic/backspace';
 
-const Backspace = ({
-  inputNum,
-  setInputNum,
-  ...props }) => {
+const Backspace = (props) => {
 
   const buttClick = () => {
     backspace(
-      inputNum,
-      setInputNum
+      props.inputNum,
+      props.setInputNum
     )
   }
 

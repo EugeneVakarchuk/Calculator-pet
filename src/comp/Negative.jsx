@@ -2,20 +2,16 @@ import React from 'react';
 import { Button } from './Button';
 import classes from '../styles.module.css'
 
-const Negative = ({
-  output,
-  inputNum,
-  setInputNum,
-  ...props }) => {
+const Negative = (props) => {
 
   const buttClick = () => {
-    if (output > 0) {
-      setInputNum(
-        ['-', ...inputNum]
+    if (props.output > 0) {
+      props.setInputNum(
+        ['-', ...props.inputNum]
       )
     } else {
-      setInputNum(
-        inputNum.filter(el => el !== '-')
+      props.setInputNum(
+        props.inputNum.filter(el => el !== '-')
       )
     }
   }

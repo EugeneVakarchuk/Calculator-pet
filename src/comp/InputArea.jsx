@@ -1,5 +1,4 @@
 import React from 'react';
-import { Button } from './Button';
 import classes from '../styles.module.css';
 import NumberButton from './NumberButton';
 import MathButton from './MathButton';
@@ -10,123 +9,93 @@ import Clear from './Clear';
 import Backspace from './Backspace';
 import Negative from './Negative';
 
-const InputArea = ({
-  output,
-  mathFunc,
-  memoryNum,
-  setMemoryNum,
-  setMathFunc,
-  inputNum,
-  setInputNum,
-  setNumsDef,
-  numsDef,
-  setOutput,
-  setIsFloatNum,
-  isFloatNum,
-  setIntergerPart,
-  intergerPart,
-  ...props }) => {
+const InputArea = (props) => {
+
+  const numberProps = {
+    setInputNum: props.setInputNum,
+    inputNum: props.inputNum,
+  }
+
+  const dotProps = {
+    setInputNum: props.setInputNum,
+    inputNum: props.inputNum,
+    setIsFloatNum: props.setIsFloatNum,
+    isFloatNum: props.isFloatNum,
+  }
+
+  const mathProps = {
+    output: props.output,
+    setMathFunc: props.setMathFunc,
+    setMemoryNum: props.setMemoryNum,
+    setInputNum: props.setInputNum,
+    setNumsDef: props.setNumsDef,
+    setIsFloatNum: props.setIsFloatNum,
+  }
+
+  const clearEverythingProps = {
+    setMemoryNum: props.setMemoryNum,
+    setMathFunc: props.setMathFunc,
+    setInputNum: props.setInputNum,
+    setNumsDef: props.setNumsDef,
+    setOutput: props.setOutput,
+    setIsFloatNum: props.setIsFloatNum,
+    setIntergerPart: props.setIntergerPart,
+  }
+
+  const equalButtonProps = {
+    intergerPart: props.intergerPart,
+    setInputNum: props.setInputNum,
+    setMemoryNum: props.setMemoryNum,
+    mathFunc: props.mathFunc,
+    inputNum: props.inputNum,
+    memoryNum: props.memoryNum,
+    output: props.output,
+    setNumsDef: props.setNumsDef,
+    numsDef: props.numsDef,
+    isFloatNum: props.isFloatNum,
+    setIsFloatNum: props.setIsFloatNum,
+  }
+
+  const negativeProps = {
+    output: props.output,
+    inputNum: props.inputNum,
+    setInputNum: props.setInputNum,
+  }
+
+  const clearProps = {
+    setInputNum: props.setInputNum
+  }
+
+  const backspaceProps = {
+    inputNum: props.inputNum,
+    setInputNum: props.setInputNum,
+  }
 
   return (
     <div onClick={props.onClick} className={classes.input}>
       <div className={classes.input_numbers}>
-        <NumberButton setInputNum={setInputNum} inputNum={inputNum} >7</NumberButton>
-        <NumberButton setInputNum={setInputNum} inputNum={inputNum} >8</NumberButton>
-        <NumberButton setInputNum={setInputNum} inputNum={inputNum} >9</NumberButton>
-        <NumberButton setInputNum={setInputNum} inputNum={inputNum} >4</NumberButton>
-        <NumberButton setInputNum={setInputNum} inputNum={inputNum} >5</NumberButton>
-        <NumberButton setInputNum={setInputNum} inputNum={inputNum} >6</NumberButton>
-        <NumberButton setInputNum={setInputNum} inputNum={inputNum} >1</NumberButton>
-        <NumberButton setInputNum={setInputNum} inputNum={inputNum} >2</NumberButton>
-        <NumberButton setInputNum={setInputNum} inputNum={inputNum} >3</NumberButton>
-        <NumberButton setInputNum={setInputNum} inputNum={inputNum} >0</NumberButton>
-        <Dot setInputNum={setInputNum} inputNum={inputNum} setIsFloatNum={setIsFloatNum} isFloatNum={isFloatNum}>.</Dot>
+        <NumberButton {...numberProps} >7</NumberButton>
+        <NumberButton {...numberProps} >8</NumberButton>
+        <NumberButton {...numberProps} >9</NumberButton>
+        <NumberButton {...numberProps} >4</NumberButton>
+        <NumberButton {...numberProps} >5</NumberButton>
+        <NumberButton {...numberProps} >6</NumberButton>
+        <NumberButton {...numberProps} >1</NumberButton>
+        <NumberButton {...numberProps} >2</NumberButton>
+        <NumberButton {...numberProps} >3</NumberButton>
+        <NumberButton {...numberProps} >0</NumberButton>
+        <Dot {...dotProps}>.</Dot>
       </div>
       <div className={classes.input_operations}>
-
-
-        <MathButton
-          output={output}
-          setMathFunc={setMathFunc}
-          setMemoryNum={setMemoryNum}
-          setInputNum={setInputNum}
-          setNumsDef={setNumsDef}
-          setIsFloatNum={setIsFloatNum}
-        >/</MathButton>
-
-
-        <Backspace
-          inputNum={inputNum}
-          setInputNum={setInputNum}
-        >&#8592;</Backspace>
-
-
-        <MathButton
-          output={output}
-          setMathFunc={setMathFunc}
-          setMemoryNum={setMemoryNum}
-          setInputNum={setInputNum}
-          setNumsDef={setNumsDef}
-          setIsFloatNum={setIsFloatNum}
-        >*</MathButton>
-
-
-        <Clear
-          setInputNum={setInputNum}
-        >C</Clear>
-
-
-        <MathButton
-          output={output}
-          setMathFunc={setMathFunc}
-          setMemoryNum={setMemoryNum}
-          setInputNum={setInputNum}
-          setNumsDef={setNumsDef}
-          setIsFloatNum={setIsFloatNum}
-        >-</MathButton>
-
-
-        <ClearEverithing
-          setMemoryNum={setMemoryNum}
-          setMathFunc={setMathFunc}
-          setInputNum={setInputNum}
-          setNumsDef={setNumsDef}
-          setOutput={setOutput}
-          setIsFloatNum={setIsFloatNum}
-          setIntergerPart={setIntergerPart}
-        >CE</ClearEverithing>
-
-
-        <MathButton
-          output={output}
-          setMathFunc={setMathFunc}
-          setMemoryNum={setMemoryNum}
-          setInputNum={setInputNum}
-          setNumsDef={setNumsDef}
-          setIsFloatNum={setIsFloatNum}
-        >+</MathButton>
-
-
-        <Negative
-          output={output}
-          inputNum={inputNum}
-          setInputNum={setInputNum}
-        >&#177;</Negative>
-
-
-        <EqualsButton
-          intergerPart={intergerPart}
-          setInputNum={setInputNum}
-          setMemoryNum={setMemoryNum}
-          mathFunc={mathFunc}
-          inputNum={inputNum}
-          memoryNum={memoryNum}
-          output={output}
-          setNumsDef={setNumsDef}
-          numsDef={numsDef}
-          isFloatNum={isFloatNum}
-          setIsFloatNum={setIsFloatNum}
-        >=</EqualsButton>
+        <MathButton {...mathProps}>/</MathButton>
+        <Backspace {...backspaceProps}>&#8592;</Backspace>
+        <MathButton {...mathProps}>*</MathButton>
+        <Clear {...clearProps}>C</Clear>
+        <MathButton {...mathProps} >-</MathButton>
+        <ClearEverithing {...clearEverythingProps}>CE</ClearEverithing>
+        <MathButton {...mathProps} >+</MathButton>
+        <Negative {...negativeProps}>&#177;</Negative>
+        <EqualsButton {...equalButtonProps}>=</EqualsButton>
       </div>
     </div>
   );

@@ -2,14 +2,13 @@ import React from 'react';
 import { Button } from './Button';
 import classes from '../styles.module.css'
 
-const NumberButton = ({
-  inputNum,
-  setInputNum,
-  ...props }) => {
+const NumberButton = (props) => {
+
+  console.log(props)
 
   const buttClick = () => {
-    setInputNum(
-      [...inputNum, props.children]
+    props.setInputNum(
+      [...props.inputNum, props.children]
     )
   }
 

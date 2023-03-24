@@ -3,23 +3,16 @@ import { Button } from './Button';
 import classes from '../styles.module.css'
 import setMath from '../mathLogic/setMathOperation';
 
-const MathButton = ({
-  output,
-  setMathFunc,
-  setMemoryNum,
-  setInputNum,
-  setNumsDef,
-  setIsFloatNum,
-  ...props }) => {
+const MathButton = (props) => {
 
   const buttClick = () => {
     setMath(
-      output,
-      setMemoryNum,
-      setInputNum,
-      setNumsDef,
-      setIsFloatNum,
-      setMathFunc,
+      props.output,
+      props.setMemoryNum,
+      props.setInputNum,
+      props.setNumsDef,
+      props.setIsFloatNum,
+      props.setMathFunc,
       props.children
     )
   }

@@ -2,19 +2,14 @@ import React from 'react';
 import { Button } from './Button';
 import classes from '../styles.module.css'
 
-const Dot = ({
-  inputNum,
-  setInputNum,
-  setIsFloatNum,
-  isFloatNum,
-  ...props }) => {
+const Dot = (props) => {
 
   const buttClick = () => {
-    if (!isFloatNum) {
-      setInputNum(
-        [...inputNum, props.children]
+    if (!props.isFloatNum) {
+      props.setInputNum(
+        [...props.inputNum, props.children]
       )
-      setIsFloatNum(true);
+      props.setIsFloatNum(true);
     }
   }
 
